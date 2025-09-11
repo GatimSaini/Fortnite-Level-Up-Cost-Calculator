@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/webp" href="/favicon.webp">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortnite Level Up Cost Calculator</title>
+  <style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  button {
+      margin-top: 1rem;
+      background: #ff758c;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s ease;
+  }
+
+  button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ff6a89, #f76da6);
+  }
+
+  .results {
+    margin-top: 1.5rem;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .results.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .error {
+    margin-top: 1rem;
+    color: #ffdddd;
+    font-weight: bold;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+  }
+
+  .vbucks-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* 📱 Mobile responsiveness */
+  @media (max-width: 480px) {
+    .container {
+      padding: 1.5rem;
+      border-radius: 15px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    input {
+      font-size: 0.95rem;
+      padding: 10px;
+    }
+
+    button {
+      font-size: 0.95rem;
+      padding: 12px;
+    }
+
+    .results {
+      font-size: 0.95rem;
+    }
+
+    .vbucks-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+ 
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fortnite Level Up Cost Calculator</h1>
+    <input type="number" id="currentLevel" placeholder="Enter current level">
+    <input type="number" id="desiredLevel" placeholder="Enter desired level">
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="errorMsg" class="error"></div>
+
+    <div id="resultsBox" class="results">
+      <p>
+        <strong>Cost:</strong> 
+        <img src="Icon_VBucks.webp" alt="V-Bucks" class="vbucks-icon"> 
+        <span id="costText">-</span>
+      </p>
+      <p>
+        <strong>Advance:</strong> 
+        <img src="Icon_VBucks.webp" alt="V-Bucks" class="vbucks-icon"> 
+        <span id="advanceText">-</span>
+      </p>
+      <p>
+        <strong>Level at which advance must be given:</strong> <span id="lvlText">-</span>
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
