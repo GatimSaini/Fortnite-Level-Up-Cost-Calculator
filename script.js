@@ -28,7 +28,7 @@ function calculate() {
     return;
   }
 
-  const levelDifference = desiredLevel - currentLevel;
+  const levelDifference = (desiredLevel - currentLevel) + 1;
 
   if (levelDifference < 0) {
     errorMsg.textContent = "Desired level cannot be less than current level";
