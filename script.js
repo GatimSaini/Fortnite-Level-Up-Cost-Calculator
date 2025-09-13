@@ -28,7 +28,7 @@ function calculate() {
     return;
   }
 
-  const levelDifference = desiredLevel - currentLevel;
+  const levelDifference = (desiredLevel - currentLevel) + 1;
 
   if (levelDifference < 0) {
     errorMsg.textContent = "Desired level cannot be less than current level";
@@ -40,7 +40,7 @@ function calculate() {
   // Show results smoothly
   resultsBox.classList.add("show");
 
-  if (levelDifference > 0 && levelDifference <= 9) {
+  if (levelDifference > 0 && levelDifference < 10) {
     costText.textContent = "0";
     advanceText.textContent = "0";
     lvlText.textContent = "N/A";
