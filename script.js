@@ -40,12 +40,12 @@ function calculate() {
   // Show results smoothly
   resultsBox.classList.add("show");
 
-  if (levelDifference > 0 && levelDifference <= 7) {
+  if (levelDifference > 0 && levelDifference <= 9) {
     costText.textContent = "0";
     advanceText.textContent = "0";
     lvlText.textContent = "N/A";
   } else {
-    const cost = levelDifference * 7;
+    const cost = levelDifference * 5;
     const roundedCost = Math.round(cost / 100) * 100;
     costText.textContent = roundedCost;
 
