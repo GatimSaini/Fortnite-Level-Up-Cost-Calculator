@@ -40,7 +40,7 @@ function calculate() {
   // Show results smoothly
   resultsBox.classList.add("show");
 
-  if (levelDifference > 0 && levelDifference <= 9) {
+  if (levelDifference > 0 && levelDifference < 10) {
     costText.textContent = "0";
     advanceText.textContent = "0";
     lvlText.textContent = "N/A";
